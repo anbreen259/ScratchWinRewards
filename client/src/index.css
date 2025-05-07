@@ -1,0 +1,298 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 210 79% 23%;  /* royal blue */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 43 100% 50%;  /* premium gold */
+  --secondary-foreground: 210 79% 23%;
+  --accent: 60 4.8% 95.9%;
+  --accent-foreground: 24 9.8% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 20 14.3% 4.1%;
+  --radius: 0.5rem;
+  
+  /* Royal blue palette */
+  --royal-blue-50: 210 80% 97%;
+  --royal-blue-100: 210 80% 94%;
+  --royal-blue-200: 210 80% 87%;
+  --royal-blue-300: 210 80% 74%;
+  --royal-blue-400: 210 79% 56%;
+  --royal-blue-500: 210 79% 46%;
+  --royal-blue-600: 210 79% 36%;
+  --royal-blue-700: 210 79% 26%;
+  --royal-blue-800: 210 79% 23%;
+  --royal-blue-900: 210 79% 15%;
+  
+  /* Premium gold palette */
+  --premium-gold-50: 43 100% 96%;
+  --premium-gold-100: 43 100% 92%;
+  --premium-gold-200: 43 100% 84%;
+  --premium-gold-300: 43 100% 72%;
+  --premium-gold-400: 43 100% 61%;
+  --premium-gold-500: 43 100% 50%;
+  --premium-gold-600: 43 100% 40%;
+  --premium-gold-700: 43 100% 30%;
+  --premium-gold-800: 43 100% 20%;
+  --premium-gold-900: 43 100% 10%;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 210 79% 46%;  /* royal blue */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 43 100% 50%;  /* premium gold */
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Tailwind utilities for royal-blue and premium-gold colors */
+@layer utilities {
+  .bg-royal-blue-50 {
+    background-color: hsl(var(--royal-blue-50));
+  }
+  .bg-royal-blue-100 {
+    background-color: hsl(var(--royal-blue-100));
+  }
+  .bg-royal-blue-200 {
+    background-color: hsl(var(--royal-blue-200));
+  }
+  .bg-royal-blue-300 {
+    background-color: hsl(var(--royal-blue-300));
+  }
+  .bg-royal-blue-400 {
+    background-color: hsl(var(--royal-blue-400));
+  }
+  .bg-royal-blue-500 {
+    background-color: hsl(var(--royal-blue-500));
+  }
+  .bg-royal-blue-600 {
+    background-color: hsl(var(--royal-blue-600));
+  }
+  .bg-royal-blue-700 {
+    background-color: hsl(var(--royal-blue-700));
+  }
+  .bg-royal-blue-800 {
+    background-color: hsl(var(--royal-blue-800));
+  }
+  .bg-royal-blue-900 {
+    background-color: hsl(var(--royal-blue-900));
+  }
+  
+  .bg-premium-gold-50 {
+    background-color: hsl(var(--premium-gold-50));
+  }
+  .bg-premium-gold-100 {
+    background-color: hsl(var(--premium-gold-100));
+  }
+  .bg-premium-gold-200 {
+    background-color: hsl(var(--premium-gold-200));
+  }
+  .bg-premium-gold-300 {
+    background-color: hsl(var(--premium-gold-300));
+  }
+  .bg-premium-gold-400 {
+    background-color: hsl(var(--premium-gold-400));
+  }
+  .bg-premium-gold-500 {
+    background-color: hsl(var(--premium-gold-500));
+  }
+  .bg-premium-gold-600 {
+    background-color: hsl(var(--premium-gold-600));
+  }
+  .bg-premium-gold-700 {
+    background-color: hsl(var(--premium-gold-700));
+  }
+  .bg-premium-gold-800 {
+    background-color: hsl(var(--premium-gold-800));
+  }
+  .bg-premium-gold-900 {
+    background-color: hsl(var(--premium-gold-900));
+  }
+  
+  .text-royal-blue-50 {
+    color: hsl(var(--royal-blue-50));
+  }
+  .text-royal-blue-100 {
+    color: hsl(var(--royal-blue-100));
+  }
+  .text-royal-blue-500 {
+    color: hsl(var(--royal-blue-500));
+  }
+  .text-royal-blue-600 {
+    color: hsl(var(--royal-blue-600));
+  }
+  .text-royal-blue-700 {
+    color: hsl(var(--royal-blue-700));
+  }
+  .text-royal-blue-800 {
+    color: hsl(var(--royal-blue-800));
+  }
+  
+  .text-premium-gold-500 {
+    color: hsl(var(--premium-gold-500));
+  }
+  .text-premium-gold-600 {
+    color: hsl(var(--premium-gold-600));
+  }
+  
+  .border-royal-blue-500 {
+    border-color: hsl(var(--royal-blue-500));
+  }
+  
+  .border-premium-gold-500 {
+    border-color: hsl(var(--premium-gold-500));
+  }
+}
+
+/* Special effects */
+.glow-effect {
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.6);
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.6);
+  }
+  to {
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.9);
+  }
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) rotate(30deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(30deg);
+  }
+}
+
+/* Confetti animation */
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  top: 0;
+  z-index: 1000;
+  animation: confetti-fall 3s ease-in-out forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    top: -10px;
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    top: 100vh;
+    transform: translateX(100px) rotate(720deg);
+  }
+}
+
+/* Scratch card */
+.scratch-card {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.scratch-card-cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1601987077677-5346c0c57d3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200');
+  background-size: cover;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.scratch-card-prize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #ffc107, #f59e0b);
+  color: #1a365d;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Font setup */
+.font-montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
