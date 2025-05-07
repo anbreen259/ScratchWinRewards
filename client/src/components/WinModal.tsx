@@ -27,12 +27,26 @@ const WinModal = ({ isOpen, onClose, prize }: WinModalProps) => {
           </p>
         </div>
         
-        {/* Celebration image with confetti and fireworks */}
-        <img 
-          src="https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=200" 
-          alt="Celebration with confetti" 
-          className="w-full h-auto rounded-lg mb-4"
-        />
+        {/* Celebration graphic with confetti and fireworks */}
+        <div className="celebration-graphic rounded-lg h-40 mb-4 flex items-center justify-center relative overflow-hidden">
+          <div className="confetti-container">
+            {Array.from({ length: 50 }).map((_, i) => (
+              <div 
+                key={i}
+                className="confetti-piece"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  width: `${Math.random() * 10 + 5}px`,
+                  height: `${Math.random() * 10 + 5}px`,
+                  background: ['#ffc107', '#1a365d', '#f59e0b', '#3b82f6', '#10b981'][Math.floor(Math.random() * 5)],
+                  animationDelay: `${Math.random() * 2}s`,
+                  animationDuration: `${Math.random() * 3 + 2}s`
+                }}
+              />
+            ))}
+          </div>
+          <div className="text-4xl font-bold text-white z-10">Congratulations!</div>
+        </div>
         
         <p className="text-gray-600 mb-6">Your prize has been added to your account and is ready to use!</p>
         

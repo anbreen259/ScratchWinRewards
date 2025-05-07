@@ -268,8 +268,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://images.unsplash.com/photo-1601987077677-5346c0c57d3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200');
-  background-size: cover;
   z-index: 10;
   cursor: pointer;
 }
@@ -286,6 +284,41 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   text-align: center;
+}
+
+/* Celebration Graphic */
+.celebration-graphic {
+  background: linear-gradient(135deg, #1a365d, #0f172a);
+  position: relative;
+}
+
+.confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -10px;
+  border-radius: 50%;
+  animation: confetti-fall-modal 3s ease-in-out infinite;
+}
+
+@keyframes confetti-fall-modal {
+  0% {
+    opacity: 1;
+    top: -10px;
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0.3;
+    top: 100%;
+    transform: translateX(100px) rotate(720deg);
+  }
 }
 
 /* Font setup */

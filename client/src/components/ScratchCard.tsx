@@ -33,13 +33,47 @@ const ScratchCard = ({ onScratchComplete, isScratched, prize }: ScratchCardProps
         canvas.width = width;
         canvas.height = height;
         
-        // Load and draw background image
-        const img = new Image();
-        img.onload = () => {
-          ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-          setScratchPercentage(0);
-        };
-        img.src = 'https://images.unsplash.com/photo-1601987077677-5346c0c57d3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=320&h=200';
+        // Create custom scratch card background
+        // Fill with a royal blue base color
+        ctx.fillStyle = '#1a365d';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Draw a custom gold pattern
+        ctx.fillStyle = '#ffc107';
+        
+        // Draw some gold stars/sparkles
+        for (let i = 0; i < 50; i++) {
+          const x = Math.random() * canvas.width;
+          const y = Math.random() * canvas.height;
+          const size = Math.random() * 8 + 2;
+          
+          ctx.beginPath();
+          ctx.arc(x, y, size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        
+        // Add some decorative lines
+        ctx.strokeStyle = '#ffc107';
+        ctx.lineWidth = 2;
+        for (let i = 0; i < 8; i++) {
+          ctx.beginPath();
+          ctx.moveTo(Math.random() * canvas.width, 0);
+          ctx.lineTo(Math.random() * canvas.width, canvas.height);
+          ctx.stroke();
+          
+          ctx.beginPath();
+          ctx.moveTo(0, Math.random() * canvas.height);
+          ctx.lineTo(canvas.width, Math.random() * canvas.height);
+          ctx.stroke();
+        }
+        
+        // Add text
+        ctx.font = 'bold 24px Arial';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('SCRATCH HERE', canvas.width / 2, canvas.height / 2);
+        
+        setScratchPercentage(0);
       }
     }
   }, [isScratched]);
